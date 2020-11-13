@@ -129,6 +129,7 @@ def remove_padding_and_resize_back_simple(
     padded = tf.image.resize(
         resized_and_padded, [padded_height, padded_width], method=resize_method
     )
+    print(padding.top,padding.left,original_height,original_width)
     cropped = tf.image.crop_to_bounding_box(
         padded,
         offset_height=padding.top,
